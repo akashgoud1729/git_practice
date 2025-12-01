@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-# create a virtual machine using terraform 
+
+
+
 
 provider "azurerm" {
   features {}
@@ -17,7 +18,12 @@ resource "azurerm_virtual_network" "example" {
   resource_group_name = azurerm_resource_group.example.name
 }
 
-#
+resource "azurerm_subnet" "example" {
+  name                 = "internal"
+  resource_group_name  = azurerm_resource_group.example.name
+  virtual_network_name = azurerm_virtual_network.example.name
+  address_prefixes     = ["10.0.2.0/24"]
+}
 
 resource "azurerm_network_interface" "example" {
   name                = "example-nic"
@@ -54,6 +60,3 @@ resource "azurerm_windows_virtual_machine" "example" {
     version   = "latest"
   }
 }
-=======
-# create a virtual machine using terraform 
->>>>>>> a0184bc040d1b22ade1a2b66b7ed7f442a9f3489
