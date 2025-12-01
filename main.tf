@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # create a virtual machine using terraform 
 
 provider "azurerm" {
@@ -53,3 +54,6 @@ resource "azurerm_windows_virtual_machine" "example" {
     version   = "latest"
   }
 }
+=======
+# create a virtual machine using terraform 
+>>>>>>> a0184bc040d1b22ade1a2b66b7ed7f442a9f3489
